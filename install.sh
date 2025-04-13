@@ -12,8 +12,6 @@ echo "alias venv='source /root/.venv/bin/activate'" >> /root/.bashrc
 echo "export HF_HOME=/workspace/hf" >> /root/.bashrc
 echo "export HF_HUB_ENABLE_HF_TRANSFER=1" >> /root/.bashrc
 
-
-# Source
 source /root/.bashrc
 
 # 3) Set up huggingface cache at /workspace/hf
