@@ -20,5 +20,5 @@ uv pip install -U "huggingface-hub[hf-transfer]"
 uv pip install -U wandb
 source .venv/bin/activate
 
-huggingface-cli login --token $HF_TOKEN --add-to-git-credential
-wandb login $WANDB_TOKEN
+huggingface-cli login --token $RUNPOD_HF_TOKEN --add-to-git-credential
+wandb login $RUNPOD_WANDB_TOKEN
