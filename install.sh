@@ -15,10 +15,16 @@ echo "export HF_HUB_ENABLE_HF_TRANSFER=1" >> /root/.bashrc
 source /root/.bashrc
 
 # 3) Set up huggingface cache at /workspace/hf
-uv pip install -U "huggingface_hub[cli]"
-uv pip install -U "huggingface-hub[hf-transfer]"
-uv pip install -U wandb
+
 source .venv/bin/activate
+uv add "huggingface_hub[cli]" --active
+uv add "huggingface-hub[hf-transfer]" --active
+uv add "wandb" --active
 
 huggingface-cli login --token $RUNPOD_HF_TOKEN --add-to-git-credential
 wandb login $RUNPOD_WANDB_TOKEN
+
+# 4) Install ipykernel
+uv add --dev ipykernel --force-reinstall --active
+uv run ipython kernel install --env VIRTUAL_ENV ~/.venv --name=project
+uv run --with jupyter jupyter lab
