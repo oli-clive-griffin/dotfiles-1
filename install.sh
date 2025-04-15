@@ -16,20 +16,14 @@ source /root/.bashrc
 
 # 3) Set up huggingface cache at /workspace/hf
 
+# cd /workspace
+# uv init
+
+uv pip install "huggingface_hub[cli]"
+uv pip install "huggingface-hub[hf-transfer]"
+uv pip install "wandb"
+uv pip install "python-dotenv"
 source .venv/bin/activate
-cd /workspace
-uv init
-uv add --active "huggingface_hub[cli]"
-uv add --active "huggingface-hub[hf-transfer]"
-uv add --active "wandb"
 
 huggingface-cli login --token $RUNPOD_HF_TOKEN --add-to-git-credential
 wandb login $RUNPOD_WANDB_TOKEN
-
-# 4) Install ipykernel
-uv add --active --dev "ipykernel"
-uv run --active ipython kernel install --env VIRTUAL_ENV ~/.venv --name=project
-uv add --active "jupyter_archive"
-uv add --active "nbclassic"
-uv add --active "jupyter_nbextensions_configurator"
-uv run --active --with jupyter jupyter lab
