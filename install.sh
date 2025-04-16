@@ -15,15 +15,11 @@ echo "export HF_HUB_ENABLE_HF_TRANSFER=1" >> /root/.bashrc
 source /root/.bashrc
 
 # 3) Set up huggingface cache at /workspace/hf
-
-# cd /workspace
-# uv init
-
+source .venv/bin/activate
 uv pip install "huggingface_hub[cli]"
 uv pip install "huggingface-hub[hf-transfer]"
 uv pip install "wandb"
 uv pip install "python-dotenv"
-source .venv/bin/activate
 
 huggingface-cli login --token $RUNPOD_HF_TOKEN --add-to-git-credential
 wandb login $RUNPOD_WANDB_TOKEN
