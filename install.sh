@@ -19,6 +19,7 @@ source .venv/bin/activate
 uv pip install "huggingface_hub[cli]"
 uv pip install "huggingface-hub[hf-transfer]"
 uv pip install "wandb"
+uv pip install "ipykernel"
 uv pip install "python-dotenv"
 
 huggingface-cli login --token $RUNPOD_HF_TOKEN --add-to-git-credential
