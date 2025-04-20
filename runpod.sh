@@ -11,8 +11,6 @@ bash dotfiles/github.sh
 source dotfiles/install.sh
 
 # 3) Clone the current working repo
-cd /workspace
-git clone https://github.com/chry-santhemum/ocr
 # uv pip install -r requirements.txt
 
 # install node for vscode
