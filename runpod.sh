@@ -22,7 +22,7 @@ echo "HF_HOME=/workspace/ocr/data/hf" >> $HOME/.bashrc
 echo "export HF_HUB_ENABLE_HF_TRANSFER=1" >> $HOME/.bashrc
 source $HOME/.bashrc
 
-git clone https://github.com/chry-santhemum/ocr.git
+git clone https://github.com/JoshEngels/OOCR-Interp.git
 
 cd ocr
 
